@@ -1,9 +1,4 @@
-
-
----
-
-```markdown
-# AI Task Tagger
+# AI Task Tagger 
 
 An intelligent task management system that automatically categorizes and tags your workflow using the high-efficiency **Liquid LFM-2.5 (1.2B)** model via OpenRouter API.
 
@@ -16,7 +11,7 @@ An intelligent task management system that automatically categorizes and tags yo
 ---
 
 ## Project Context
-The main goal of **AI Task Tagger** is to eliminate the manual overhead of organizing to-do lists. Traditionally, users have to manually select priorities and categories for every task they create.
+The main goal of **AI Task Tagger** is to eliminate the manual overhead of organizing to-do lists. Traditionally, users have to manually select priorities and categories for every task they create. 
 
 ## Features
 * **Smart Auto-Tagging:** Leverages Liquid LFM to assign descriptive tags instantly.
@@ -60,18 +55,16 @@ sudo docker compose up -d --build
 This project is optimized for deployment on a **Virtual Machine (VM)**.
 
 ### 1. System Requirements
-- **Operating System:** Ubuntu 24.04 LTS (Recommended)
-- **Network:** Port `8000` must be open in your firewall/security groups.
+* **Operating System:** Ubuntu 24.04 LTS (Recommended)
+* **Network:** Port `8000` must be open in your firewall/security groups.
 
 ### 2. Prerequisites
 The following tools must be installed on the VM:
-- **Git**
-- **Docker** (Engine version 24.0+)
-- **Docker Compose** (V2 plugin)
+* **Git**
+* **Docker** (Engine version 24.0+)
+* **Docker Compose** (V2 plugin)
 
 ### 3. Step-by-Step Deployment
-
-Follow these commands to deploy the project from scratch on your Ubuntu VM:
 
 **Step 1: Update the system and install Docker**
 ```bash
@@ -99,7 +92,3 @@ sudo docker compose up -d --build
 ```bash
 sudo docker ps
 ```
-```
-
----
-
