@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip3 install *)",
+      "Bash(timeout *)",
+      "Bash(true)",
+      "Bash(uvicorn *)",
+      "Bash(sleep *)",
+      "Bash(curl *)",
+      "Bash(cd *)",
+      "Bash(python3 *)",
+      "Bash(rm *)"
+    ]
+  },
+  "$version": 3
+}
