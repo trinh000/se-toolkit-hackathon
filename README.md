@@ -1,110 +1,45 @@
-# AI Task Tagger
+# AI Task Tagger (SE Toolkit Hackathon)
 
-A web task manager that automatically tags your tasks using AI (OpenRouter / Gemini 2.5 Flash).
+An intelligent task management system that automatically categorizes and tags your workflow using the high-efficiency **Liquid LFM-2.5 (1.2B)** model via OpenRouter API.
 
-## Demo
+**Live Demo:** [http://10.93.26.56:8000/](http://10.93.26.56:8000/)  
 
-![Demo](https://via.placeholder.com/800x400?text=AI+Task+Tagger+Demo)
 
-## Product Context
+---
 
-AI Task Tagger was built for the hackathon to demonstrate how lightweight LLM APIs can add smart metadata to everyday workflows. Instead of manually categorizing tasks, a single AI call assigns a descriptive tag — instantly.
+## 💡 Project Context
+AI Task Tagger was developed for the SE Toolkit Hackathon to demonstrate how lightweight "Small Language Models" (SLMs) can provide enterprise-grade utility with minimal latency. 
+
+
 
 ## Features
+- **Smart Auto-Tagging:** Leverages Liquid LFM to assign descriptive tags instantly.
+- **Persistent Storage:** Tasks and AI-generated metadata are stored in a SQLite database.
+- **Modern UI:** Clean, responsive interface built with FastAPI, Jinja2, and TailwindCSS.
+- **Dockerized Deployment:** Fully containerized and optimized for remote VM deployment.
 
-- **Auto-tagging** — Every task is sent to OpenRouter (Gemini 2.5 Flash) which returns a single descriptive tag
-- **Persistent storage** — Tasks are saved in a SQLite database
-- **Clean UI** — Responsive TailwindCSS interface with gradient accents
-- **Delete tasks** — Hover over any task to remove it
-- **Docker-ready** — One-command deployment via docker-compose
+## 🛠 Tech Stack
 
-## Tech Stack
+| Layer | Technology |
+| :--- | :--- |
+| **Backend** | FastAPI (Python 3.11) |
+| **AI Agent** | **Liquid LFM-2.5-1.2B-Instruct** (via OpenRouter) |
+| **Database** | SQLite + SQLAlchemy |
+| **Frontend** | Jinja2 + TailwindCSS |
+| **Deployment** | Docker & Docker Compose |
 
-| Layer       | Technology              |
-|-------------|-------------------------|
-| Backend     | FastAPI + Python 3.11   |
-| Database    | SQLite + SQLAlchemy     |
-| Frontend    | Jinja2 + TailwindCSS    |
-| AI          | OpenRouter (Gemini 2.5 Flash) |
-| Deployment  | Docker + docker-compose |
+---
 
-## Usage
+## Installation & Usage
 
-### Local Development
-
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd se-toolkit-hackathon
-   ```
-
-2. **Set your API key**
-   ```bash
-   # Edit .env and add your OpenRouter key
-   OPENROUTER_API_KEY=sk-or-your-actual-key-here
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run the app**
-   ```bash
-   uvicorn app.main:app --reload --port 8000
-   ```
-
-5. **Open** http://localhost:8000
-
-### Add a Task
-
-1. Enter your name and task description
-2. Click "Add Task & Auto-Tag"
-3. Watch the AI assign a tag in real-time
-
-## Deployment
-
-### Docker Compose (Recommended)
+### 1. Local Development
+To run this project locally, ensure you have Docker installed.
 
 ```bash
-# Make sure your .env has a valid OPENROUTER_API_KEY
-docker compose up --build
-```
+# Clone the repository
+git clone [https://github.com/trinh000/se-toolkit-hackathon.git](https://github.com/trinh000/se-toolkit-hackathon.git)
+cd se-toolkit-hackathon
 
-The app will be available at http://localhost:8000
-
-### Docker (manual)
-
-```bash
-docker build -t ai-task-tagger .
-docker run -p 8000:8000 --env-file .env ai-task-tagger
-```
-
-### Production Notes
-
-- Replace SQLite with PostgreSQL for production (change `DATABASE_URL`)
-- Set a proper secret key and use HTTPS
-- Consider caching AI responses for repeated task patterns
-
-## Project Structure
-
-```
-.
-├── app/
-│   ├── __init__.py
-│   ├── main.py          # FastAPI app & AI tagging logic
-│   ├── models.py        # SQLAlchemy Task model
-│   └── database.py      # Database engine & session
-├── templates/
-│   └── index.html       # Jinja2 + TailwindCSS UI
-├── .env                 # Environment variables
-├── requirements.txt     # Python dependencies
-├── Dockerfile           # Docker image
-├── docker-compose.yml   # Docker orchestration
-├── LICENSE              # MIT License
-└── README.md            # This file
-```
-
-## License
-
-MIT — see [LICENSE](LICENSE) for details.
+# Setup environment variables
+# Create a .env file and add your OpenRouter API key:
+echo "OPENROUTER_API_KEY=your_sk_key_here" > .env
